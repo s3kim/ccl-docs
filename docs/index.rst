@@ -12,3 +12,5 @@ ccl-docs documentation
 
    tasks/index
    updates/index
+   resources/index
+
