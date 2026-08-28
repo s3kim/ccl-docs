@@ -1,5 +1,5 @@
 .. toctree::
    :maxdepth: 2
-   :caption: Sayop Kim
+   :caption: Sayop Kim:
 
     202608Week4
