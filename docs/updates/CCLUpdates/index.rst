@@ -1,5 +1,5 @@
-CCL Updates Log
-===============
+CCL Updates
+===========
 
 Recent project updates and announcements:
 
