@@ -1,5 +1,9 @@
 CCL Updates
 ===========
 
-Welcome to the updates section.
+Select a sub-category below:
 
+.. toctree::
+   :maxdepth: 1
+
+   CCLUpdates/index
