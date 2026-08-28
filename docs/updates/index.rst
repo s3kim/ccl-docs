@@ -2,7 +2,7 @@ Updates
 =======
 .. toctree::
    :maxdepth: 1
-   :caption: Member Updates
+   :caption: Updates
 
    CCLUpdate/index.rst
    MemberUpdate/index.rst
