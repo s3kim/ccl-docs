@@ -4,7 +4,7 @@ Resources
 Here are some important learning/training materials. This secion is constantly updated; please keep an eye on.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    HPC/index
    CFD/index
