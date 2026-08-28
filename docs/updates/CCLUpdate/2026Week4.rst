@@ -1,4 +1,4 @@
-August 2026 Update
+2026 August Week 4
 ==================
 
 - Successfully set up Sphinx documentation.
