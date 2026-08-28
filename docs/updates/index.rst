@@ -4,7 +4,7 @@ Updates
 Select a sub-category below:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    CCLUpdates/index
    MemberUpdates/index
