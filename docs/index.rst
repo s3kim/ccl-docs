@@ -10,4 +10,5 @@ ccl-docs documentation
    :maxdepth: 1
    :caption: Main Contents:
 
+   tasks/index
    updates/index
