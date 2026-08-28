@@ -1,8 +1,0 @@
-Member Updates
-==============
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Member Updates
-
-   SayopKim
