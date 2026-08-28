@@ -1,7 +1,9 @@
-CCL Updates
---------------
+CCL Updates Log
+===============
+
+Recent project updates and announcements:
+
 .. toctree::
    :maxdepth: 1
-   :caption: CCL Updates
 
    202608Week4
