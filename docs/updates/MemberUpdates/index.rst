@@ -7,3 +7,7 @@ Recent project updates from CCL members:
    :maxdepth: 1
 
    SayopKim/index
+   GavinYeagle/index
+   AlbertoMato/index
+   DylanTerrell/index
+
