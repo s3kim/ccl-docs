@@ -4,5 +4,5 @@ Member Updates
    :maxdepth: 1
    :caption: Member Updates
 
-   CCLUpdate
-   MemberUpdate
+   CCLUpdate/index.rst
+   MemberUpdate/index.rst
