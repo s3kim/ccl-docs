@@ -1,5 +1,5 @@
-Lab Updates Overview
-====================
+Updates
+=======
 
 Select a sub-category below:
 
@@ -7,3 +7,4 @@ Select a sub-category below:
    :maxdepth: 1
 
    CCLUpdates/index
+   MemberUpdates/index
