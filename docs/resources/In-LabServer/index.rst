@@ -1,4 +1,7 @@
 In-Lab Server Management
 ========================
 
-git
+.. toctree::
+   :maxdepth: 1
+
+   git
