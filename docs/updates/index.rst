@@ -1,5 +1,6 @@
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Member Updates
 
-   CCLupdate_20260828
+   CCLUpdate
+   MemberUpdate
