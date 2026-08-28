@@ -8,3 +8,5 @@ Here are some important learning/training materials. This secion is constantly u
 
    HPC/index
    CFD/index
+   In-LabServer/index
+
