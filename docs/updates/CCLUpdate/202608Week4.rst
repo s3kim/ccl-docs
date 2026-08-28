@@ -1,5 +1,0 @@
-2026 August Week 4
-==================
-
-- Successfully set up Sphinx documentation.
-- Published site to Read the Docs.
