@@ -14,4 +14,4 @@ documentation for details.
    :maxdepth: 1
    :caption: Contents:
 
-   updates/index.rst
+   updates
