@@ -1,5 +1,7 @@
+CCL Updates
+--------------
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+   :caption: CCL Updates
 
    202608Week4
