@@ -1,0 +1,14 @@
+/* First level bullet list (solid disc) */
+ul {
+    list-style-type: disc;
+}
+
+/* Second level bullet list (open circle or square) */
+ul ul {
+    list-style-type: circle; /* Options: circle, square, dash, lower-alpha */
+}
+
+/* Third level bullet list */
+ul ul ul {
+    list-style-type: square;
+}

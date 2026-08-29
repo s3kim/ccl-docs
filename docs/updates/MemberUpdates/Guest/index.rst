@@ -1,5 +1,5 @@
-TEST section
-============
+TEST section (will be removed)
+==============================
 
 .. toctree::
    :maxdepth: 1

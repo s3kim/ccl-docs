@@ -5,4 +5,4 @@ CONVERGE CFD
    :maxdepth: 1
 
    converge-cfd
-   training
+   installation

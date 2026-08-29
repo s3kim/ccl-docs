@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>What is CONVERGE CFD? &mdash; ccl-docs  documentation</title>
+  <title>On Linux &mdash; ccl-docs  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
@@ -20,8 +20,8 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Installation Guide" href="installation.html" />
-    <link rel="prev" title="CONVERGE CFD" href="index.html" /> 
+    <link rel="next" title="OpenFOAM" href="../OpenFOAM/index.html" />
+    <link rel="prev" title="On Windows" href="Install-Windows.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,8 +51,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../HPC/index.html">HPC (High-Performance Computer)</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">CFD (Computational Fluid Dynamics)</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">CONVERGE CFD</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">What is CONVERGE CFD?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="installation.html">Installation Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="converge-cfd.html">What is CONVERGE CFD?</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="installation.html">Installation Guide</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../OpenFOAM/index.html">OpenFOAM</a></li>
@@ -80,9 +80,10 @@
           <li class="breadcrumb-item"><a href="../../index.html">Resources</a></li>
           <li class="breadcrumb-item"><a href="../index.html">CFD (Computational Fluid Dynamics)</a></li>
           <li class="breadcrumb-item"><a href="index.html">CONVERGE CFD</a></li>
-      <li class="breadcrumb-item active">What is CONVERGE CFD?</li>
+          <li class="breadcrumb-item"><a href="installation.html">Installation Guide</a></li>
+      <li class="breadcrumb-item active">On Linux</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../_sources/resources/CFD/CONVERGE/converge-cfd.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/resources/CFD/CONVERGE/Install-Linux.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -90,18 +91,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="what-is-converge-cfd">
-<h1>What is CONVERGE CFD?<a class="headerlink" href="#what-is-converge-cfd" title="Link to this heading"></a></h1>
-<p>CONVERGE CFD is a multi-purpose Computational Fluid Dynamics (CFD) software package developed by Convergent Science. It simulates 3D fluid flows, heat transfer, turbulence, and chemical reactions for complex engineering applications.</p>
-<section id="key-features-innovations">
-<h2>Key Features &amp; Innovations<a class="headerlink" href="#key-features-innovations" title="Link to this heading"></a></h2>
+  <section id="on-linux">
+<h1>On Linux<a class="headerlink" href="#on-linux" title="Link to this heading"></a></h1>
+<p>Installing the CONVERGE CFD suite on Linux uses a self-extracting shell installer bundle. System requirements include a 64-bit Linux distribution (such as RHEL, Ubuntu, or Rocky Linux) with <code class="docutils literal notranslate"><span class="pre">glibc</span> <span class="pre">2.28+</span></code> and <code class="docutils literal notranslate"><span class="pre">OpenGL</span> <span class="pre">3.3+</span></code> drivers (if running CONVERGE Studio natively).</p>
+<section id="download-the-bundle-installer">
+<h2>Download the Bundle Installer<a class="headerlink" href="#download-the-bundle-installer" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Go to the <a class="reference external" href="https://hub.convergecfd.com/downloads" rel="noreferrer" target="_blank">Convergent Science Hub Download Portal</a> and sign in:</p></li>
+<li><p>Download the unified executable bundle (e.g., <code class="docutils literal notranslate"><span class="pre">CONVERGE_CFD_BUNDLE_x.x.x_linux_x64.sh</span></code>).</p></li>
+</ol>
+</section>
+<section id="installation-guide-on-linux-shells">
+<h2>Installation Guide on Linux Shells<a class="headerlink" href="#installation-guide-on-linux-shells" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Make the Installer Executable</p>
 <ul class="simple">
-<li><p><strong>Autonomous Meshing</strong>: Unlike traditional CFD software that requires manual grid creation (which can take days or weeks), CONVERGE generates a Cartesian mesh automatically at runtime based on simple user-defined parameters.</p></li>
-<li><p><strong>Adaptive Mesh Refinement (AMR)</strong>: Dynamically refines or coarsens the computational grid during the simulation in response to local flow conditions—such as high velocity gradients, flame fronts, or temperature spikes.</p></li>
-<li><p><strong>Cut-Cell Cartesian Method</strong>: Accurately represents complex and moving geometries without deformation or loss of cell quality.</p></li>
-<li><p><strong>Fully Coupled Chemistry (SAGE Solver)</strong>: Solves detailed chemical kinetics directly within the fluid flow equations, making it industry-leading for combustion and reaction dynamics (e.g., e-fuels, hydrogen combustion, natural gas).</p></li>
-<li><p><strong>High-Performance Computing (HPC) Scaling</strong>: Scales efficiently across hundreds to thousands of processor cores to minimize runtimes for complex transient simulations.</p></li>
+<li><p>Open a Linux terminal and navigate to the folder containing your downloaded <code class="docutils literal notranslate"><span class="pre">.sh</span></code> file.</p></li>
+<li><p>Grant Execution permissions to the script:</p></li>
 </ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>CONVERGE_CFD_BUNDLE_*_linux_x64.sh
+</pre></div>
+</div>
+</li>
+<li><p>Run the CONVERGE Installer</p>
+<ul>
+<li><p>Execute the installer script (<code class="docutils literal notranslate"><span class="pre">.sh</span></code>):</p>
+<ul class="simple">
+<li><p><strong>System-wide (Root/Sudo)</strong>:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>./CONVERGE_CFD_BUNDLE_*_linux_x64.sh
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Single User (Non-root)</strong>:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./CONVERGE_CFD_BUNDLE_*_linux_x64.sh
+</pre></div>
+</div>
+</li>
+<li><p>Follow the on-screen prompt to specify the installation directory (default: <cite>/opt/Convergent_Science/ or ~/Convergent_Science/</cite>).</p></li>
+<li><p>Select the suite components to install: <strong>CONVERGE Solver</strong>, <strong>CONVERGE Studio</strong>, <strong>MPI packages</strong> (e.g., Open MPI, Intel MPI, HPC-X), <strong>ParaView</strong>, and <strong>Tecplot</strong>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="configure-the-license">
+<h2>Configure the License<a class="headerlink" href="#configure-the-license" title="Link to this heading"></a></h2>
 </section>
 </section>
 
@@ -109,8 +144,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="CONVERGE CFD" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="installation.html" class="btn btn-neutral float-right" title="Installation Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Install-Windows.html" class="btn btn-neutral float-left" title="On Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../OpenFOAM/index.html" class="btn btn-neutral float-right" title="OpenFOAM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
