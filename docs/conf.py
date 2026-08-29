@@ -15,6 +15,7 @@ author = 'Sayop Kim'
 
 extensions = [
     'myst_parser',
+    'sphinx_new_tab_link',
 ]
 
 templates_path = ['_templates']

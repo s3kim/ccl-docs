@@ -1,0 +1,5 @@
+August 2026, Week4 Lab Update
+=============================
+
+- Initialized the new multi-tier updates structure.
+- Added documentation pages under CCLUpdates.
