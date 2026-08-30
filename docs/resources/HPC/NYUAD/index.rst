@@ -1,4 +1,10 @@
+=================
 NYUAD-managed HPC
 =================
 
-`NYU Abu Dhabi HPC Wiki <https://crc-docs.abudhabi.nyu.edu/>`_
+.. toctree::
+   :maxdepth: 1
+
+   hpc-overview
+   user-practice
+

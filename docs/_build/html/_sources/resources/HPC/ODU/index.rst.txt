@@ -1,4 +1,11 @@
+===============
 ODU-managed HPC
 ===============
 
-`ODU Research Cloud Computing (RCC) <https://wiki.hpc.odu.edu/>`_
+.. toctree::
+   :maxdepth: 1
+
+   hpc-overview 
+   user-practice
+
+
