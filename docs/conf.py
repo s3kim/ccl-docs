@@ -14,6 +14,7 @@ author = 'Sayop Kim'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
+    'sphinx_rtd_theme',
     'myst_parser',
     'sphinx_new_tab_link',
 ]
