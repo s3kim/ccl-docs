@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automating ParaView Post-Processing with pvpython &mdash; ccl-docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=8b1c7e2f" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="PVpython" href="pvpython.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ccl-docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Main Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../rules/index.html">CCL-Docs Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tasks/index.html">On-Going Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../updates/index.html">Updates</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../HPC/index.html">HPC (High-Performance Computer)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CFD/index.html">CFD (Computational Fluid Dynamics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../In-LabServer/index.html">In-Lab Server Management</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Exercises (Tools &amp; Utilities)</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">ParaView</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="paraview.html">What is ParaView?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pvpython.html">PVpython</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Automating ParaView Post-Processing with <cite>pvpython</cite></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ccl-docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Resources</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Exercises (Tools &amp; Utilities)</a></li>
+          <li class="breadcrumb-item"><a href="index.html">ParaView</a></li>
+      <li class="breadcrumb-item active">Automating ParaView Post-Processing with <cite>pvpython</cite></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/resources/Exercises/ParaView/pvpython-ex1.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="automating-paraview-post-processing-with-pvpython">
+<h1>Automating ParaView Post-Processing with <cite>pvpython</cite><a class="headerlink" href="#automating-paraview-post-processing-with-pvpython" title="Link to this heading"></a></h1>
+<p>This online document page provides instructional practice of pvpython utility aimed at automating the post-processing routine. This exercise was developed for a ECN spray flame simulation task, but widely applicable to different CFD tasks. This document is restructured from the previously documented draft: <a class="reference download internal" download="" href="../../../_downloads/e8c1229e18a7c7ae87b869e52c37d9d2/pvpython_script_manual.pdf"><code class="xref download docutils literal notranslate"><span class="pre">download</span></code></a>.</p>
+<p>When working with large CFD datasets, running ParaView interactively via a GUI on a local machine or login node can lead to memory limits, slow performance, or crashes. The <code class="docutils literal notranslate"><span class="pre">pvpython</span></code> scripting interface allows you to automate data loading, filter applications, and image/data exports in <strong>headless (non-GUI)</strong> mode directly on remote HPC clusters.</p>
+<section id="benefits-of-pvpython">
+<h2>Benefits of <code class="docutils literal notranslate"><span class="pre">pvpython</span></code><a class="headerlink" href="#benefits-of-pvpython" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Headless Operation:</strong> Eliminates GUI overhead and avoids display-related crashes with massive datasets.</p></li>
+<li><p><strong>Workflow Automation:</strong> Batch-processes multiple time steps, applies filters, and exports figures automatically.</p></li>
+<li><p><strong>Parallel Execution:</strong> Scalable via MPI for faster processing (e.g., <code class="docutils literal notranslate"><span class="pre">mpirun</span> <span class="pre">-np</span> <span class="pre">N</span> <span class="pre">pvpython</span> <span class="pre">script.py</span></code>).</p></li>
+</ul>
+</section>
+<section id="step-1-generate-a-state-file-pvsm-in-paraview">
+<h2>Step 1: Generate a State File (<code class="docutils literal notranslate"><span class="pre">.pvsm</span></code>) in ParaView<a class="headerlink" href="#step-1-generate-a-state-file-pvsm-in-paraview" title="Link to this heading"></a></h2>
+<p>Before running headless scripts, construct your visual pipeline using a single sample file locally:</p>
+<ol class="arabic">
+<li><p>Download a representative sample output file locally (e.g., an HDF5 <code class="docutils literal notranslate"><span class="pre">.h5</span></code> file).</p></li>
+<li><p>Open ParaView GUI, load the sample file, and set up your desired filters (e.g., slice, contour, color map).</p></li>
+<li><p>Save the visualization state:</p>
+<p>Go to <strong>File &gt; Save State…</strong> and save the session as a <code class="docutils literal notranslate"><span class="pre">.pvsm</span></code> file (e.g., <code class="docutils literal notranslate"><span class="pre">temperature_slice.pvsm</span></code>).</p>
+</li>
+</ol>
+</section>
+<section id="step-2-trace-python-actions-in-paraview">
+<h2>Step 2: Trace Python Actions in ParaView<a class="headerlink" href="#step-2-trace-python-actions-in-paraview" title="Link to this heading"></a></h2>
+<p>Use ParaView’s Trace feature to auto-generate the underlying Python code required to load states and render images:</p>
+<ol class="arabic simple">
+<li><p>Reopen ParaView and navigate to <strong>Tools &gt; Start Trace</strong>. Click <strong>OK</strong> in the popup window.</p></li>
+<li><p>Load your state file via <strong>File &gt; Load State…</strong>.</p></li>
+<li><p>Save a sample rendering via <strong>File &gt; Save Screenshot…</strong>.</p></li>
+<li><p>Stop the trace via <strong>Tools &gt; Stop Trace</strong>.</p></li>
+<li><p>Save the generated Python script (e.g., <code class="docutils literal notranslate"><span class="pre">trace_script.py</span></code>).</p></li>
+</ol>
+</section>
+<section id="step-3-modify-the-script-for-time-series-batching">
+<h2>Step 3: Modify the Script for Time-Series Batching<a class="headerlink" href="#step-3-modify-the-script-for-time-series-batching" title="Link to this heading"></a></h2>
+<p>To apply your visualization pipeline across a sequence of dataset files, wrap the traced code into an automated function.</p>
+<ol class="arabic simple">
+<li><p>Create a script named <code class="docutils literal notranslate"><span class="pre">run_postprocess.py</span></code>.</p></li>
+<li><p>Add a helper subroutine (<code class="docutils literal notranslate"><span class="pre">readPVSM</span></code>) that dynamically updates the target file path and animation time inside the <code class="docutils literal notranslate"><span class="pre">.pvsm</span></code> file before rendering:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">paraview.simple</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">readPVSM</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">pltPrefix</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">pvsm_template</span><span class="p">,</span> <span class="n">postfile</span><span class="p">,</span> <span class="n">output_png</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Updates the target post-processing file inside the PVSM state</span>
+<span class="sd">    and exports a rendered image.</span>
+<span class="sd">    """</span>
+    <span class="n">pf</span> <span class="o">=</span> <span class="n">postfile</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">pvsm_new</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">pltPrefix</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">time</span><span class="si">}</span><span class="s2">.pvsm"</span>
+
+    <span class="c1"># Replace template file placeholders with current timestep references</span>
+    <span class="n">checkwords</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"postfile"</span><span class="p">,</span> <span class="s2">"currenth5time"</span><span class="p">,</span> <span class="s2">"posths"</span><span class="p">)</span>
+    <span class="n">repwords</span> <span class="o">=</span> <span class="p">(</span><span class="n">postfile</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="p">),</span> <span class="n">pf</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pvsm_template</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">pvsm_new</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fout</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fin</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">check</span><span class="p">,</span> <span class="n">rep</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">checkwords</span><span class="p">,</span> <span class="n">repwords</span><span class="p">):</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">check</span><span class="p">,</span> <span class="n">rep</span><span class="p">)</span>
+            <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+    <span class="c1"># Load state and render image</span>
+    <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">DisableFirstRenderCameraReset</span><span class="p">()</span>
+    <span class="n">LoadState</span><span class="p">(</span><span class="n">pvsm_new</span><span class="p">)</span>
+
+    <span class="n">renderView1</span> <span class="o">=</span> <span class="n">FindViewOrCreate</span><span class="p">(</span><span class="s1">'RenderView1'</span><span class="p">,</span> <span class="n">viewtype</span><span class="o">=</span><span class="s1">'RenderView'</span><span class="p">)</span>
+    <span class="n">SetActiveView</span><span class="p">(</span><span class="n">renderView1</span><span class="p">)</span>
+
+    <span class="c1"># Save exported frame</span>
+    <span class="n">SaveScreenshot</span><span class="p">(</span><span class="n">output_png</span><span class="p">,</span> <span class="n">renderView1</span><span class="p">,</span> <span class="n">ImageResolution</span><span class="o">=</span><span class="p">[</span><span class="mi">1374</span><span class="p">,</span> <span class="mi">789</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Generated: </span><span class="si">{</span><span class="n">output_png</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="c1"># Clean up temporary state file</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">pvsm_new</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">pvsm_new</span><span class="p">)</span>
+
+<span class="c1"># Main Loop</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="c1"># Define paths and time ranges</span>
+    <span class="n">filePath</span> <span class="o">=</span> <span class="s2">"./outputs"</span>
+    <span class="n">filePrefix</span> <span class="o">=</span> <span class="s2">"post"</span>
+    <span class="n">pltPrefix</span> <span class="o">=</span> <span class="s2">"temperature"</span>
+    <span class="n">figurepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">"figures"</span><span class="p">)</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">figurepath</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Filter files by time range</span>
+    <span class="n">tStart</span><span class="p">,</span> <span class="n">tEnd</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0e-03</span>
+
+    <span class="c1"># Iterate across output files and render frames</span>
+    <span class="c1"># (replace with your file searching/sorting logic)</span>
+    <span class="c1"># readPVSM(time, pltPrefix, num, "template.pvsm", postfile, output_png)</span>
+    <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="step-4-execute-on-hpc-via-interactive-slurm-session">
+<h2>Step 4: Execute on HPC via Interactive SLURM Session<a class="headerlink" href="#step-4-execute-on-hpc-via-interactive-slurm-session" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do <strong>not</strong> run intensive <code class="docutils literal notranslate"><span class="pre">pvpython</span></code> rendering tasks directly on login nodes. Doing so violates HPC resource policies and causes out-of-memory errors.</p>
+</div>
+<ol class="arabic">
+<li><p>Request an interactive compute node using <code class="docutils literal notranslate"><span class="pre">srun</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun<span class="w"> </span>--pty<span class="w"> </span>--mem<span class="o">=</span>256G<span class="w"> </span>-t<span class="w"> </span><span class="m">05</span>:00:00<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>/bin/bash
+</pre></div>
+</div>
+</li>
+<li><p>Once allocated to a compute node, load your required environment modules (if applicable) and run the script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pvpython<span class="w"> </span>run_postprocess.py
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pvpython.html" class="btn btn-neutral float-left" title="PVpython" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Sayop Kim.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

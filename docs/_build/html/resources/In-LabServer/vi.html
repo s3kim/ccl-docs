@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vi/Vim Editor &mdash; ccl-docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8b1c7e2f" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Git Essentials" href="git.html" />
+    <link rel="prev" title="In-Lab Server Management" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            ccl-docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Main Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../rules/index.html">CCL-Docs Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tasks/index.html">On-Going Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../updates/index.html">Updates</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../HPC/index.html">HPC (High-Performance Computer)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CFD/index.html">CFD (Computational Fluid Dynamics)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">In-Lab Server Management</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Vi/Vim Editor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#key-concept-modes-in-vi">1. Key Concept: Modes in Vi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#starting-vi">2. Starting Vi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#entering-insert-mode-editing-text">3. Entering Insert Mode (Editing Text)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#saving-and-exiting-command-line-mode">4. Saving and Exiting (Command-Line Mode)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#basic-navigation-normal-mode">5. Basic Navigation (Normal Mode)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#editing-deleting-shortcuts">6. Editing &amp; Deleting Shortcuts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#searching-text">7. Searching Text</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#quick-reference-table">Quick Reference Table</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="git.html">Git Essentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx.html">Sphinx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Exercises/index.html">Exercises (Tools &amp; Utilities)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ccl-docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Resources</a></li>
+          <li class="breadcrumb-item"><a href="index.html">In-Lab Server Management</a></li>
+      <li class="breadcrumb-item active">Vi/Vim Editor</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/resources/In-LabServer/vi.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vi-vim-editor">
+<h1>Vi/Vim Editor<a class="headerlink" href="#vi-vim-editor" title="Link to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">vi</span></code> (or <code class="docutils literal notranslate"><span class="pre">vim</span></code>) editor is a powerful, lightweight text editor available by default on virtually all Linux/Unix systems and HPC clusters.</p>
+<section id="key-concept-modes-in-vi">
+<h2>1. Key Concept: Modes in Vi<a class="headerlink" href="#key-concept-modes-in-vi" title="Link to this heading"></a></h2>
+<p>Unlike traditional text editors, <code class="docutils literal notranslate"><span class="pre">vi</span></code> operates in different <strong>modes</strong>:</p>
+<ul class="simple">
+<li><p><strong>Normal Mode:</strong> Default mode for navigating, deleting, copying, and pasting text.</p></li>
+<li><p><strong>Insert Mode:</strong> Used for typing and editing text.</p></li>
+<li><p><strong>Command-Line Mode:</strong> Used for saving, exiting, and editor configurations.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you ever get stuck or lost, press the <code class="docutils literal notranslate"><span class="pre">Esc</span></code> key to return to <strong>Normal Mode</strong>.</p>
+</div>
+</section>
+<section id="starting-vi">
+<h2>2. Starting Vi<a class="headerlink" href="#starting-vi" title="Link to this heading"></a></h2>
+<p>To create a new file or open an existing file, pass the filename to <code class="docutils literal notranslate"><span class="pre">vi</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open or create a file</span>
+vi<span class="w"> </span>filename.txt
+</pre></div>
+</div>
+</section>
+<section id="entering-insert-mode-editing-text">
+<h2>3. Entering Insert Mode (Editing Text)<a class="headerlink" href="#entering-insert-mode-editing-text" title="Link to this heading"></a></h2>
+<p>From <strong>Normal Mode</strong>, press one of the following keys to start typing text:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> — Insert text <strong>before</strong> the cursor position.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> — Append text <strong>after</strong> the cursor position.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">o</span></code> — Open a new line <strong>below</strong> the current line.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">O</span></code> — Open a new line <strong>above</strong> the current line.</p></li>
+</ul>
+<p>Press <code class="docutils literal notranslate"><span class="pre">Esc</span></code> at any time to return to <strong>Normal Mode</strong>.</p>
+</section>
+<section id="saving-and-exiting-command-line-mode">
+<h2>4. Saving and Exiting (Command-Line Mode)<a class="headerlink" href="#saving-and-exiting-command-line-mode" title="Link to this heading"></a></h2>
+<p>To run file commands, return to <strong>Normal Mode</strong> (press <code class="docutils literal notranslate"><span class="pre">Esc</span></code>) and type <code class="docutils literal notranslate"><span class="pre">:</span></code> followed by the command:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:w</span></code> — Save (write) changes to the file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:q</span></code> — Quit the editor (fails if there are unsaved changes).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:wq</span></code> or <code class="docutils literal notranslate"><span class="pre">:x</span></code> — Save changes and quit.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:q!</span></code> — Quit without saving changes.</p></li>
+</ul>
+</section>
+<section id="basic-navigation-normal-mode">
+<h2>5. Basic Navigation (Normal Mode)<a class="headerlink" href="#basic-navigation-normal-mode" title="Link to this heading"></a></h2>
+<p>While arrow keys work in modern Vim installations, standard key navigation in <strong>Normal Mode</strong> is recommended:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">h</span></code> — Move left</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">j</span></code> — Move down</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">k</span></code> — Move up</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">l</span></code> — Move right</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> (zero) — Jump to the beginning of the line</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span></code> — Jump to the end of the line</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gg</span></code> — Jump to the first line of the file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G</span></code> — Jump to the last line of the file</p></li>
+</ul>
+</section>
+<section id="editing-deleting-shortcuts">
+<h2>6. Editing &amp; Deleting Shortcuts<a class="headerlink" href="#editing-deleting-shortcuts" title="Link to this heading"></a></h2>
+<p>Execute these shortcuts from <strong>Normal Mode</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> — Delete the character under the cursor.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dd</span></code> — Delete (cut) the current line.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3dd</span></code> — Delete (cut) 3 lines.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">yy</span></code> — Copy (yank) the current line.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span></code> — Paste copied/cut text <strong>below</strong> the current line.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u</span></code> — Undo the last action.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">r</span></code> — Redo the last undone action.</p></li>
+</ul>
+</section>
+<section id="searching-text">
+<h2>7. Searching Text<a class="headerlink" href="#searching-text" title="Link to this heading"></a></h2>
+<p>In <strong>Normal Mode</strong>:</p>
+<ol class="arabic simple">
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">/pattern</span></code> and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to search forward for “pattern”.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">n</span></code> to jump to the next match.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">N</span></code> to jump to the previous match.</p></li>
+</ol>
+</section>
+<section id="quick-reference-table">
+<h2>Quick Reference Table<a class="headerlink" href="#quick-reference-table" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command / Key</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code></p></td>
+<td><p>Return to Normal Mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">i</span></code></p></td>
+<td><p>Enter Insert Mode.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">:wq</span></code></p></td>
+<td><p>Save and exit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">:q!</span></code></p></td>
+<td><p>Force quit without saving.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dd</span></code></p></td>
+<td><p>Delete (cut) current line.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">p</span></code></p></td>
+<td><p>Paste copied/cut text.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u</span></code></p></td>
+<td><p>Undo last change.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="In-Lab Server Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git.html" class="btn btn-neutral float-right" title="Git Essentials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Sayop Kim.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

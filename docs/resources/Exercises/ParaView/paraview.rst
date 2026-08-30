@@ -1,0 +1,19 @@
+=================
+What is ParaView?
+=================
+
+ParaView is an open-source, multi-platform application designed for interactive scientific visualization and data analysis. Developed by Kitware in collaboration with research institutions like Los Alamos National Laboratory, it allows researchers and engineers to analyze extremely large 3D datasets.
+
+
+Key Capabilities
+================
+
+
+* **Scalable Data Processing**: Designed to run on everything from a single laptop to massive supercomputing clusters. It uses a client-server architecture, allowing users to inspect terabytes or petabytes of data processed remotely on HPC hardware.
+
+* **3D Visualization**: Generates isosurfaces, volumetric renderings, vector field streamlines, slicing planes, and particle trajectories.
+
+* **Pipeline Architecture**: Uses a modular pipeline where raw data flows through a series of "filters" (e.g., clip, threshold, slice, calculate derivatives) to isolate specific physical phenomena.
+
+* **Python Scripting**: Features complete Python integration (``pvpython``) to automate workflow rendering, batch-process simulation outputs, and run headless analysis on remote servers.
+

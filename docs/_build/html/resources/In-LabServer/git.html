@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Git &mdash; ccl-docs  documentation</title>
+  <title>Git: Versioni Control Tool &mdash; ccl-docs  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Sphinx" href="sphinx.html" />
-    <link rel="prev" title="In-Lab Server Management" href="index.html" /> 
+    <link rel="prev" title="Vi/Vim Editor" href="vi.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,10 +53,21 @@
 <li class="toctree-l2"><a class="reference internal" href="../HPC/index.html">HPC (High-Performance Computer)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../CFD/index.html">CFD (Computational Fluid Dynamics)</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">In-Lab Server Management</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vi.html">Vi/Vim Editor</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Git: Versioni Control Tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#initial-configuration">1. Initial Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-cloning-repositories">2. Creating &amp; Cloning Repositories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-basic-git-workflow">3. The Basic Git Workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inspecting-history-differences">4. Inspecting History &amp; Differences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#branching-merging">5. Branching &amp; Merging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remote-synchronization">6. Remote Synchronization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#quick-reference-summary">Quick Reference Summary</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="sphinx.html">Sphinx</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../Exercises/index.html">Exercises (Tools &amp; Utilities)</a></li>
 </ul>
 </li>
 </ul>
@@ -77,7 +88,7 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Resources</a></li>
           <li class="breadcrumb-item"><a href="index.html">In-Lab Server Management</a></li>
-      <li class="breadcrumb-item active">Git</li>
+      <li class="breadcrumb-item active">Git: Versioni Control Tool</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/resources/In-LabServer/git.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,16 +98,130 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="git">
-<h1>Git<a class="headerlink" href="#git" title="Link to this heading"></a></h1>
+  <section id="git-versioni-control-tool">
+<h1>Git: Versioni Control Tool<a class="headerlink" href="#git-versioni-control-tool" title="Link to this heading"></a></h1>
 <p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
+<section id="initial-configuration">
+<h2>1. Initial Configuration<a class="headerlink" href="#initial-configuration" title="Link to this heading"></a></h2>
+<p>Before using Git, set up your identity (name and email). This information is attached to every commit you make.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set your global username</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Your Name"</span>
+
+<span class="c1"># Set your global email address</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"your.email@example.com"</span>
+
+<span class="c1"># Verify your settings</span>
+git<span class="w"> </span>config<span class="w"> </span>--list
+</pre></div>
+</div>
+</section>
+<section id="creating-cloning-repositories">
+<h2>2. Creating &amp; Cloning Repositories<a class="headerlink" href="#creating-cloning-repositories" title="Link to this heading"></a></h2>
+<p>Start a new repository locally or download an existing one from a remote host (e.g., GitHub, GitLab).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize a new Git repository in the current folder</span>
+git<span class="w"> </span>init
+
+<span class="c1"># Clone an existing remote repository onto your machine</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/repository.name.git
+</pre></div>
+</div>
+</section>
+<section id="the-basic-git-workflow">
+<h2>3. The Basic Git Workflow<a class="headerlink" href="#the-basic-git-workflow" title="Link to this heading"></a></h2>
+<p>The basic workflow consists of making changes in your <strong>Working Directory</strong>, adding them to the <strong>Staging Area</strong>, and recording them in your <strong>Repository</strong>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the status of your files (untracked, modified, staged)</span>
+git<span class="w"> </span>status
+
+<span class="c1"># Stage a specific file for the next commit</span>
+git<span class="w"> </span>add<span class="w"> </span>filename.txt
+
+<span class="c1"># Stage all modified and new files in the current directory</span>
+git<span class="w"> </span>add<span class="w"> </span>.
+
+<span class="c1"># Commit staged changes with a descriptive message</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add feature or describe changes made"</span>
+</pre></div>
+</div>
+</section>
+<section id="inspecting-history-differences">
+<h2>4. Inspecting History &amp; Differences<a class="headerlink" href="#inspecting-history-differences" title="Link to this heading"></a></h2>
+<p>Review changes and commit history to see what was updated over time.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># View commit history</span>
+git<span class="w"> </span>log
+
+<span class="c1"># View a compact, one-line version of commit history</span>
+git<span class="w"> </span>log<span class="w"> </span>--oneline
+
+<span class="c1"># View unstaged changes in your files compared to the last commit</span>
+git<span class="w"> </span>diff
+</pre></div>
+</div>
+</section>
+<section id="branching-merging">
+<h2>5. Branching &amp; Merging<a class="headerlink" href="#branching-merging" title="Link to this heading"></a></h2>
+<p>Branches allow you to develop features, fix bugs, or experiment safely without affecting the main codebase.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># List all local branches (* indicates current active branch)</span>
+git<span class="w"> </span>branch
+
+<span class="c1"># Create a new branch</span>
+git<span class="w"> </span>branch<span class="w"> </span>feature-name
+
+<span class="c1"># Switch to an existing branch</span>
+git<span class="w"> </span>checkout<span class="w"> </span>feature-name
+
+<span class="c1"># Shortcut: Create and switch to a new branch in one command</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature-name
+
+<span class="c1"># Merge changes from a feature branch into your active branch</span>
+git<span class="w"> </span>merge<span class="w"> </span>feature-name
+</pre></div>
+</div>
+</section>
+<section id="remote-synchronization">
+<h2>6. Remote Synchronization<a class="headerlink" href="#remote-synchronization" title="Link to this heading"></a></h2>
+<p>Share your commits with remote repositories or retrieve updates from team members.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fetch and merge changes from the remote repository</span>
+git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+
+<span class="c1"># Push your local commits to the remote repository</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature-name
+</pre></div>
+</div>
+</section>
+<section id="quick-reference-summary">
+<h2>Quick Reference Summary<a class="headerlink" href="#quick-reference-summary" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p></td>
+<td><p>View modified, staged, or untracked files.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code></p></td>
+<td><p>Stage all current changes.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;msg&quot;</span></code></p></td>
+<td><p>Save staged changes locally.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code></p></td>
+<td><p>Download latest updates from remote server.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p></td>
+<td><p>Upload local commits to remote server.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="In-Lab Server Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vi.html" class="btn btn-neutral float-left" title="Vi/Vim Editor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="sphinx.html" class="btn btn-neutral float-right" title="Sphinx" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
