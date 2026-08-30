@@ -10,6 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=8b1c7e2f" />
 
   
       <script src="../../../_static/jquery.js?v=5d32c60e"></script>
@@ -20,7 +21,7 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Linux" href="Install-Linux.html" />
+    <link rel="next" title="On Linux" href="Install-Linux.html" />
     <link rel="prev" title="Installation Guide" href="installation.html" /> 
 </head>
 
@@ -45,6 +46,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Main Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../rules/index.html">CCL-Docs Rules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tasks/index.html">On-Going Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../updates/index.html">Updates</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Resources</a><ul class="current">
@@ -52,6 +54,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">CFD (Computational Fluid Dynamics)</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">CONVERGE CFD</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="converge-cfd.html">What is CONVERGE CFD?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="license.html">Floating License</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="installation.html">Installation Guide</a></li>
 </ul>
 </li>
@@ -122,6 +125,24 @@
 </section>
 <section id="configure-the-license">
 <h2>Configure the License<a class="headerlink" href="#configure-the-license" title="Link to this heading"></a></h2>
+<p>The RLM license server is running elsewhere (on the ODU HPC network), you need to tell your Windows where the license server is. To do this job, you should create an <strong>environment variable</strong> for RLM in your Windows system.</p>
+<p><strong>Step 1. Open Environment Variables</strong></p>
+<ol class="arabic simple">
+<li><p>Press <strong>Windows Key</strong></p></li>
+<li><p>Search <strong>“Environment Variables”</strong></p></li>
+<li><p>Open <strong>Edit the system environment variables</strong></p></li>
+<li><p>Click <strong>Environment Variables</strong></p></li>
+</ol>
+<p><strong>Step 2. Create RLM_LICENSE</strong></p>
+<ol class="arabic simple">
+<li><p>Under <strong>System Variables</strong>, Click <strong>New</strong></p></li>
+<li><p>Set <strong>Variable Name:</strong> as <strong>RLM_LICENSE</strong></p></li>
+<li><p>Location: <strong>2765&#64;server_hostname_or_ip</strong></p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../_images/rlm_setup.png"><img alt="RLM_LICENSE setup foro Windows" class="align-center" src="../../../_images/rlm_setup.png" style="width: 700px;" />
+</a>
+<p>The correct RLM_LICENSE server ip will be updated. The server is under way as of 08/29/2026.</p>
+<p>For more detailed instructions, please refer to the <cite>Getting Started Guide</cite> available in the documentation folder for each CONVERGE version.</p>
 </section>
 </section>
 
@@ -130,7 +151,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="installation.html" class="btn btn-neutral float-left" title="Installation Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Install-Linux.html" class="btn btn-neutral float-right" title="Linux" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Install-Linux.html" class="btn btn-neutral float-right" title="On Linux" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

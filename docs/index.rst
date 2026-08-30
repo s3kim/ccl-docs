@@ -3,13 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-ccl-docs documentation
-======================
+Computational Combustion Lab (CCL) Docs
+=======================================
 
 .. toctree::
    :maxdepth: 1
    :caption: Main Contents:
 
+   rules/index
    tasks/index
    updates/index
    resources/index

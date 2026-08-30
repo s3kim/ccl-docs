@@ -8,7 +8,7 @@ Prerequisites
 
 1. **Convergent Science Account**: Access to software files requires an active account on the `Convergent Science Hub <https://hub.convergecfd.com/>`_.
 
-2. **License File** (``license.lic``): Obtained directly from Convergent Science or your system administrator. 
+2. **License File** (``license.lic``): Obtained directly from Convergent Science or your system administrator (Contact Dr. Kim). 
 
 3. **MPI Software**: Message Passing Interface (such as Intel MPI or OpenMPI) is required to run parallel simulations.
 

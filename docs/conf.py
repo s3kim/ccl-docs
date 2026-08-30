@@ -28,4 +28,11 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 #html_theme = 'alabaster'
 html_theme = 'sphinx_rtd_theme'
+
+# Path to custom static files
 html_static_path = ['_static']
+
+# Include custom CSS file in output HTML
+html_css_files = [
+    'custom.css',
+]

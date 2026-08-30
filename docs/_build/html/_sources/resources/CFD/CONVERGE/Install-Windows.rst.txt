@@ -36,4 +36,31 @@ This steps requires Administrator Access. Please consult with lab advisor or ODU
 Configure the License
 ---------------------
 
+The RLM license server is running elsewhere (on the ODU HPC network), you need to tell your Windows where the license server is. To do this job, you should create an **environment variable** for RLM in your Windows system.
 
+**Step 1. Open Environment Variables**
+
+1. Press **Windows Key**
+
+2. Search **"Environment Variables"**
+
+3. Open **Edit the system environment variables**
+
+4. Click **Environment Variables**
+
+**Step 2. Create RLM_LICENSE**
+
+1. Under **System Variables**, Click **New**
+
+2. Set **Variable Name:** as **RLM_LICENSE**
+
+3. Location: **2765@server_hostname_or_ip**
+
+.. image:: files/rlm_setup.png
+   :alt: RLM_LICENSE setup foro Windows
+   :width: 700px
+   :align: center
+
+The correct RLM_LICENSE server ip will be updated. The server is under way as of 08/29/2026.
+
+For more detailed instructions, please refer to the `Getting Started Guide` available in the documentation folder for each CONVERGE version.

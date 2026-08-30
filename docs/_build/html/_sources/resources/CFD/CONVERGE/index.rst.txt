@@ -5,4 +5,5 @@ CONVERGE CFD
    :maxdepth: 1
 
    converge-cfd
+   license
    installation

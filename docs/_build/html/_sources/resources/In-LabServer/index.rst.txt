@@ -5,3 +5,4 @@ In-Lab Server Management
    :maxdepth: 1
 
    git
+   sphinx
