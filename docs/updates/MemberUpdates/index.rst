@@ -10,5 +10,7 @@ Recent project updates from CCL members:
    GavinYeagle/index
    AlbertoMato/index
    DylanTerrell/index
+   TrevorHare/index
+   JenniferBuenaventura/index
    Guest/index
 
