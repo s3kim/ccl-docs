@@ -28,9 +28,9 @@ To create a new file or open an existing file, pass the filename to ``vi``:
    # Open or create a file
    vi filename.txt
 
----------------------------------
+--------------------------------------
 3. Entering Insert Mode (Editing Text)
----------------------------------
+--------------------------------------
 
 From **Normal Mode**, press one of the following keys to start typing text:
 
@@ -41,9 +41,9 @@ From **Normal Mode**, press one of the following keys to start typing text:
 
 Press ``Esc`` at any time to return to **Normal Mode**.
 
----------------------------------
+-----------------------------------------
 4. Saving and Exiting (Command-Line Mode)
----------------------------------
+-----------------------------------------
 
 To run file commands, return to **Normal Mode** (press ``Esc``) and type ``:`` followed by the command:
 

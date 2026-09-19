@@ -58,9 +58,9 @@ The basic workflow consists of making changes in your **Working Directory**, add
    git commit -m "Add feature or describe changes made"
 
 
-----------------------------------
+-----------------------------------
 4. Inspecting History & Differences
-----------------------------------
+-----------------------------------
 
 Review changes and commit history to see what was updated over time.
 

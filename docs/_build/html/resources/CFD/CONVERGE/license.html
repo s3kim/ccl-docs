@@ -62,6 +62,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../In-LabServer/index.html">In-Lab Server Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Exercises/index.html">Exercises (Tools &amp; Utilities)</a></li>
 </ul>
 </li>
 </ul>
@@ -111,6 +112,138 @@ Ubuntu WS      Student PC      HPC Cluster
 CONVERGE        CONVERGE        CONVERGE
 </pre></div>
 </div>
+<section id="setting-up-the-rlm-license-environment-variable">
+<h2>Setting Up the RLM_LICENSE Environment Variable<a class="headerlink" href="#setting-up-the-rlm-license-environment-variable" title="Link to this heading"></a></h2>
+<p>This guide provides step-by-step instructions for configuring the RLM_LICENSE environment variable on both Ubuntu Linux and Microsoft Windows. Setting this variable allows Reprise License Manager (RLM)-enabled applications to locate and check out licenses from the ODU license server.</p>
+<section id="license-server-details">
+<h3>License Server Details<a class="headerlink" href="#license-server-details" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Port&#64;Hostname:</strong> <code class="docutils literal notranslate"><span class="pre">2765&#64;converge.license.odu.edu</span></code> or <code class="docutils literal notranslate"><span class="pre">2765&#64;vr-licmgr2.ts.odu.edu</span></code></p></li>
+</ul>
+</section>
+<section id="configuration-on-ubuntu-linux">
+<h3>1. Configuration on Ubuntu Linux<a class="headerlink" href="#configuration-on-ubuntu-linux" title="Link to this heading"></a></h3>
+<p>You can set the environment variable temporarily for a single terminal session or permanently for your user account.</p>
+<section id="option-a-permanent-configuration-recommended">
+<h4>Option A: Permanent Configuration (Recommended)<a class="headerlink" href="#option-a-permanent-configuration-recommended" title="Link to this heading"></a></h4>
+<p>To make the environment variable persist across terminal sessions and system reboots, add it to your user’s shell configuration file (<code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code>):</p>
+<ol class="arabic">
+<li><p>Open a terminal window.</p></li>
+<li><p>Open your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file in a text editor:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vi<span class="w"> </span>~/.bashrc
+</pre></div>
+</div>
+</li>
+<li><p>Scroll to the bottom of the file and add the following line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">RLM_LICENSE</span><span class="o">=</span><span class="m">2765</span>@converge.license.odu.edu
+</pre></div>
+</div>
+</li>
+<li><p>Save the file and exit the editor.</p></li>
+<li><p>Apply the changes immediately to your current session by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="option-b-temporary-configuration-current-session-only">
+<h4>Option B: Temporary Configuration (Current Session Only)<a class="headerlink" href="#option-b-temporary-configuration-current-session-only" title="Link to this heading"></a></h4>
+<p>If you only need the variable set for the current terminal session, run the following command directly in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">RLM_LICENSE</span><span class="o">=</span><span class="m">2765</span>@converge.license.odu.edu
+</pre></div>
+</div>
+</section>
+<section id="verification-on-ubuntu">
+<h4>Verification on Ubuntu<a class="headerlink" href="#verification-on-ubuntu" title="Link to this heading"></a></h4>
+<p>To confirm that the variable has been set correctly, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$RLM_LICENSE</span>
+</pre></div>
+</div>
+<p><strong>Expected Output:</strong> <code class="docutils literal notranslate"><span class="pre">2765&#64;converge.license.odu.edu</span></code></p>
+</section>
+</section>
+<section id="configuration-on-microsoft-windows">
+<h3>2. Configuration on Microsoft Windows<a class="headerlink" href="#configuration-on-microsoft-windows" title="Link to this heading"></a></h3>
+<p>On Windows, you can set the variable either using the Graphical User Interface (GUI) or via PowerShell / Command Prompt.</p>
+<section id="option-a-using-system-properties-gui">
+<h4>Option A: Using System Properties (GUI)<a class="headerlink" href="#option-a-using-system-properties-gui" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Press the <strong>Windows Key</strong>, search for <strong>Environment Variables</strong>, and select <strong>Edit the system environment variables</strong>.</p></li>
+<li><p>In the <em>System Properties</em> window that appears, click the <strong>Environment Variables…</strong> button near the bottom right.</p></li>
+<li><p>Under the <strong>User variables for [Your Username]</strong> section (or <strong>System variables</strong> for all users), click <strong>New…</strong></p></li>
+<li><p>Fill in the fields as follows:</p>
+<ul class="simple">
+<li><p><strong>Variable name:</strong> <code class="docutils literal notranslate"><span class="pre">RLM_LICENSE</span></code></p></li>
+<li><p><strong>Variable value:</strong> <code class="docutils literal notranslate"><span class="pre">2765&#64;converge.license.odu.edu</span></code></p></li>
+</ul>
+</li>
+<li><p>Click <strong>OK</strong> on all open windows to save the changes.</p></li>
+</ol>
+</section>
+<section id="option-b-using-command-line-powershell-cmd">
+<h4>Option B: Using Command Line (PowerShell / CMD)<a class="headerlink" href="#option-b-using-command-line-powershell-cmd" title="Link to this heading"></a></h4>
+<ul>
+<li><p><strong>PowerShell (User Environment Variable):</strong></p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[Environment]</span><span class="p">::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s2">"RLM_LICENSE"</span><span class="p">,</span> <span class="s2">"2765@converge.license.odu.edu"</span><span class="p">,</span> <span class="s2">"User"</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Command Prompt (CMD - User Environment Variable):</strong></p>
+<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="go">setx RLM_LICENSE "2765@converge.license.odu.edu"</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="verification-on-windows">
+<h4>Verification on Windows<a class="headerlink" href="#verification-on-windows" title="Link to this heading"></a></h4>
+<p>Open a <strong>new</strong> Command Prompt or PowerShell window and run:</p>
+<ul>
+<li><p><strong>Command Prompt:</strong></p>
+<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="go">echo %RLM_LICENSE%</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>PowerShell:</strong></p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$env:RLM_LICENSE</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Expected Output:</strong> <code class="docutils literal notranslate"><span class="pre">2765&#64;converge.license.odu.edu</span></code></p>
+</section>
+</section>
+<section id="troubleshooting-notes">
+<h3>3. Troubleshooting &amp; Notes<a class="headerlink" href="#troubleshooting-notes" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Issue / Scenario</p></th>
+<th class="head"><p>Solution</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Application still cannot find license</strong></p></td>
+<td><p>Ensure you are connected to the ODU network directly or via the ODU GlobalProtect VPN before launching the application.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Variable not showing up in Windows</strong></p></td>
+<td><p>Environment variable changes only take effect in new terminal windows opened <em>after</em> the changes were saved. Close and reopen your terminal.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Multiple RLM Servers</strong></p></td>
+<td><p>If you need to connect to multiple servers, separate them with a colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>) on Linux or a semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>) on Windows.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ensure your VPN or campus connection remains active when running application license checks.</p>
+</div>
+</section>
+</section>
 </section>
 
 
