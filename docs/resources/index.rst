@@ -10,4 +10,5 @@ Here are some important learning/training materials. This secion is constantly u
    CFD/index
    In-LabServer/index
    Exercises/index
+   Materials/index
 
