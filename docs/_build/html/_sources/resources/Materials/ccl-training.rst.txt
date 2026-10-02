@@ -34,6 +34,26 @@
 
 (2026/09/25) :download:`download <files/2026_09_25_CCL_training-OpenFOAM.pdf>`. Watch the training video: |youtube_button_3|
 
+.. |youtube_button_4| raw:: html
+
+   <a href="https://www.youtube.com/watch?v=MqG2qeD4gG4&t=1447s" target="_blank" style="text-decoration: none; vertical-align: middle;">
+       <button style="background-color: #FF0000; color: white; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 13px; display: inline-flex; align-items: center; gap: 4px;">
+           ▶ Watch on YouTube
+       </button>
+   </a>
+
+(2026/10/02) :download:`download <files/2026_10_02_CCL_training-aachemBomb.pdf>`. Watch the training video: |youtube_button_4|
+
+.. |youtube_button_5| raw:: html
+
+   <a href="https://www.youtube.com/watch?v=7ctGU1hc4O8&t=3s" target="_blank" style="text-decoration: none; vertical-align: middle;">
+       <button style="background-color: #FF0000; color: white; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 13px; display: inline-flex; align-items: center; gap: 4px;">
+           ▶ Watch on YouTube
+       </button>
+   </a>
+
+(2026/10/02) :download:`download <files/2026_10_02_CCL_training-aachemBomb-HPC.pdf>`. Watch the training video: |youtube_button_5|
+
 
 
 
