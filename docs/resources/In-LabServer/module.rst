@@ -6,51 +6,98 @@ What is it and why we use it?
 
 An **Environment Module Manager** is a tool used primarily in High-Performance Computing (HPC), scientific clusters, and multi-user Linux/Unix environments to dynamically manage a user's shell environment (such as ``PATH``, ``LD_LIBRARY_PATH``, and ``MANPATH``).
 
-**Sphinx** is an open-source documentation generator that converts plain text markup files into structured websites, PDFs, and standard developer documentation. Originally created in 2008 to build official Python documentation, it has since become the industry standard for documenting Python libraries, academic software, large C/C++ projects, and open-source ecosystems (including the Linux Kernel). Visit official `Sphinx website <https://sphinx-doc.org/>`_.
+Rather than permanently modifying configuration files like ~/.bashrc or manually linking library files, environment module managers allow users to load, swap, and unload software packages and their specific versions on the fly.
 
-Core Mechanics & Features
--------------------------
+Core Concept & Problem Solved
+-----------------------------
 
-Sphinx operates under a Docs-as-Code model, allowing documentation to sit directly alongside software code in a version control system like Git.
+On shared systems or HPC clusters, users often require different versions of the same software or compiler (for example, Python 3.8 vs. Python 3.11, or GCC 11 vs. GCC 13). Installing everything system-wide in standard paths like ``/usr/bin`` creates version conflicts and dependency collisions.
 
-* **Primary Markup Languages**: Sphinx natively processes **reStructuredText (rST)**, an extensible markup language designed for technical writing. Through plugins like ``MyST-Parser``, Sphinx also supports modern **Markdown**.
+An environment module manager addresses this by keeping software packages installed in isolated directories (e.g., ``/opt/modules/python/3.11.0/``). Loading a module dynamically updates environment variables so the shell immediately knows where to find that specific version's executables and libraries.
 
-* **Automated Code Extraction** (``autodoc``): It automatically imports programming code (such as Python docstrings or C++ headers) and extracts function signatures, class descriptions, and inline comments into searchable API documentation.
+There are two main tools available in Ubuntu's official repositories:
 
-* **Cross-Referencing** (``Intersphinx``): It tracks cross-references across multiple documentation files. With Intersphinx, your documentation can link directly to external Sphinx-built sites (such as NumPy or Python standard libraries).
+1. ``environment-modules`` **(Tcl-based):** The traditional module system used in HPC environments. Simple, lightweight, and easy to configure.
+2. ``lmod`` **(Lua-based):** Modern, fast, and feature-rich module manager used in most modern supercomputing centers.
 
-* **Multiple Output Formats**: Single-source files can compile into HTML websites, searchable single-page HTML, LaTeX/PDFs, ePub, or Unix manual (man) pages.
+Your preferred options can be installed following the commdands:
 
-* **Read the Docs Integration**: Sphinx pairs with hosting services like Read the Docs. Whenever new changes are pushed to GitHub, Read the Docs triggers Sphinx to re-render and deploy the updated site automatically. 
+.. code-block:: bash
 
-How Sphinx Works?
------------------
+   # Option A: Traditional Environment Modules (CCL In-Lab Server follows this option)
+   sudo apt update && sudo apt install environment-modules -y
 
-A Sphinx project follows a standard file structure:
+   # Option B: Modern Lmod (Recommended for complex HPC stack management)
+   sudo apt update && sudo apt install lmod -y
 
-.. code-block:: text
-   :caption: Plaintext
+Once installed, restart your terminal session or run ``source /etc/profile`` to enable the ``module`` command.
 
-   my_project_docs/
-   ├── conf.py           # Configuration file (themes, extensions, metadata)
-   ├── index.rst         # Main homepage and table of contents tree (toctree)
-   ├── api_reference.rst # Technical reference pages
-   └── _build/           # Output directory where generated HTML/PDF sits
 
-.. code-block:: text
-   :caption: Code snippet
+System-Wide Module Directory
+-----------------------------
 
-   .. Example of an rST directive in Sphinx used to build a table of contents:
+By default, the module system looks in ``/usr/share/modules/modulefiles`` for software configurations. A custom location was generated in ``usr/local/modulefiles/`` to hold local application modules.
 
-   Welcome to the Project Documentation!
-   ======================================
+Upon this module configuration location generated, an individual modulefile for modulized software (e.g., ``converge``, ``openfoam``) should be created with their version info (if applicable) inside the directory:
 
-   .. toctree::
-      :maxdepth: 2
-      :caption: Table of Contents
+.. code-block:: bash
+
+   sudo nano /usr/local/modulefiles/converge/6.0.2
+
+The following Tcl-based modulefile template (works with both ``environment-modules`` and ``lmod``) can be can be included:
+
+.. code-block:: Tcl
+
+   #%Module1.0
+   #####################################################################
+   ## Modulefile for CONVERGE CFD Solver
+   #####################################################################
    
-      intro
-      theory
-      api_reference
+   proc ModulesHelp { } {
+       puts stderr "Loads environment variables for CONVERGE 3.1"
+   }
+   
+   module-whatis "Loads CONVERGE 6.0.2 CFD Solver"
+   
+   # Define CONVERGE installation path
+   set topdir /opt/Convergent_Science/CONVERGE/v3.1
+   
+   # Prepend binaries to PATH
+   prepend-path PATH $topdir/bin
+   
+   # Prepend libraries to LD_LIBRARY_PATH
+   prepend-path LD_LIBRARY_PATH $topdir/lib
+   
+   # Set License environment variable for Reprise License Manager (RLM)
+   setenv RLM_LICENSE 2765@your-license-server-hostname
 
 
+Test and User as Any User on the Server
+----------------------------------------
+
+1. List available modules:
+
+   .. code-block:: bash
+
+      module avail
+
+   *Output should display* ``converge/3.1``.
+
+2. Load CONVERGE into the current shell:
+
+   .. code-block:: bash
+
+      module load converge/3.1
+
+3. Verify the environment:
+
+   .. code-block:: bash
+
+      which converge
+      module list
+
+4. Unload when finished:
+
+   .. code-block:: bash
+
+      module unload converge

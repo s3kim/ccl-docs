@@ -7,3 +7,4 @@ In-Lab Server Management
    vi
    git
    sphinx
+   module

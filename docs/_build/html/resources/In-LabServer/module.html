@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Environment Module Manager &mdash; ccl-docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8b1c7e2f" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exercises (Tools &amp; Utilities)" href="../Exercises/index.html" />
+    <link rel="prev" title="Sphinx" href="sphinx.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            ccl-docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Main Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../rules/index.html">CCL-Docs Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tasks/index.html">On-Going Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../updates/index.html">Updates</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../HPC/index.html">HPC (High-Performance Computer)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CFD/index.html">CFD (Computational Fluid Dynamics)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">In-Lab Server Management</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="vi.html">Vi/Vim Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html">Git: Versioni Control Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx.html">Sphinx</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Environment Module Manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-it-and-why-we-use-it">What is it and why we use it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#core-concept-problem-solved">Core Concept &amp; Problem Solved</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#system-wide-module-directory">System-Wide Module Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-and-user-as-any-user-on-the-server">Test and User as Any User on the Server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Exercises/index.html">Exercises (Tools &amp; Utilities)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Materials/index.html">Training Materials (Docs/Slides)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ccl-docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Resources</a></li>
+          <li class="breadcrumb-item"><a href="index.html">In-Lab Server Management</a></li>
+      <li class="breadcrumb-item active">Environment Module Manager</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/resources/In-LabServer/module.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="environment-module-manager">
+<h1>Environment Module Manager<a class="headerlink" href="#environment-module-manager" title="Link to this heading"></a></h1>
+<section id="what-is-it-and-why-we-use-it">
+<h2>What is it and why we use it?<a class="headerlink" href="#what-is-it-and-why-we-use-it" title="Link to this heading"></a></h2>
+<p>An <strong>Environment Module Manager</strong> is a tool used primarily in High-Performance Computing (HPC), scientific clusters, and multi-user Linux/Unix environments to dynamically manage a user’s shell environment (such as <code class="docutils literal notranslate"><span class="pre">PATH</span></code>, <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code>, and <code class="docutils literal notranslate"><span class="pre">MANPATH</span></code>).</p>
+<p>Rather than permanently modifying configuration files like ~/.bashrc or manually linking library files, environment module managers allow users to load, swap, and unload software packages and their specific versions on the fly.</p>
+</section>
+<section id="core-concept-problem-solved">
+<h2>Core Concept &amp; Problem Solved<a class="headerlink" href="#core-concept-problem-solved" title="Link to this heading"></a></h2>
+<p>On shared systems or HPC clusters, users often require different versions of the same software or compiler (for example, Python 3.8 vs. Python 3.11, or GCC 11 vs. GCC 13). Installing everything system-wide in standard paths like <code class="docutils literal notranslate"><span class="pre">/usr/bin</span></code> creates version conflicts and dependency collisions.</p>
+<p>An environment module manager addresses this by keeping software packages installed in isolated directories (e.g., <code class="docutils literal notranslate"><span class="pre">/opt/modules/python/3.11.0/</span></code>). Loading a module dynamically updates environment variables so the shell immediately knows where to find that specific version’s executables and libraries.</p>
+<p>There are two main tools available in Ubuntu’s official repositories:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">environment-modules</span></code> <strong>(Tcl-based):</strong> The traditional module system used in HPC environments. Simple, lightweight, and easy to configure.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lmod</span></code> <strong>(Lua-based):</strong> Modern, fast, and feature-rich module manager used in most modern supercomputing centers.</p></li>
+</ol>
+<p>Your preferred options can be installed following the commdands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option A: Traditional Environment Modules (CCL In-Lab Server follows this option)</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>environment-modules<span class="w"> </span>-y
+
+<span class="c1"># Option B: Modern Lmod (Recommended for complex HPC stack management)</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>lmod<span class="w"> </span>-y
+</pre></div>
+</div>
+<p>Once installed, restart your terminal session or run <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/etc/profile</span></code> to enable the <code class="docutils literal notranslate"><span class="pre">module</span></code> command.</p>
+</section>
+<section id="system-wide-module-directory">
+<h2>System-Wide Module Directory<a class="headerlink" href="#system-wide-module-directory" title="Link to this heading"></a></h2>
+<p>By default, the module system looks in <code class="docutils literal notranslate"><span class="pre">/usr/share/modules/modulefiles</span></code> for software configurations. A custom location was generated in <code class="docutils literal notranslate"><span class="pre">usr/local/modulefiles/</span></code> to hold local application modules.</p>
+<p>Upon this module configuration location generated, an individual modulefile for modulized software (e.g., <code class="docutils literal notranslate"><span class="pre">converge</span></code>, <code class="docutils literal notranslate"><span class="pre">openfoam</span></code>) should be created with their version info (if applicable) inside the directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nano<span class="w"> </span>/usr/local/modulefiles/converge/6.0.2
+</pre></div>
+</div>
+<p>The following Tcl-based modulefile template (works with both <code class="docutils literal notranslate"><span class="pre">environment-modules</span></code> and <code class="docutils literal notranslate"><span class="pre">lmod</span></code>) can be can be included:</p>
+<div class="highlight-Tcl notranslate"><div class="highlight"><pre><span></span><span class="c">#%Module1.0</span>
+<span class="c">#####################################################################</span>
+<span class="c">## Modulefile for CONVERGE CFD Solver</span>
+<span class="c">#####################################################################</span>
+
+<span class="k">proc</span><span class="w"> </span>ModulesHelp<span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">    </span><span class="nb">puts</span><span class="w"> </span>stderr<span class="w"> </span><span class="s2">"Loads environment variables for CONVERGE 3.1"</span>
+<span class="k">}</span>
+
+<span class="nv">module-whatis</span><span class="w"> </span><span class="s2">"Loads CONVERGE 6.0.2 CFD Solver"</span>
+
+<span class="c"># Define CONVERGE installation path</span>
+<span class="k">set</span><span class="w"> </span>topdir<span class="w"> </span><span class="o">/</span>opt<span class="o">/</span>Convergent_Science<span class="o">/</span>CONVERGE<span class="o">/</span>v3.1
+
+<span class="c"># Prepend binaries to PATH</span>
+<span class="nv">prepend-path</span><span class="w"> </span>PATH<span class="w"> </span><span class="nv">$topdir</span><span class="o">/</span>bin
+
+<span class="c"># Prepend libraries to LD_LIBRARY_PATH</span>
+<span class="nv">prepend-path</span><span class="w"> </span>LD_LIBRARY_PATH<span class="w"> </span><span class="nv">$topdir</span><span class="o">/</span>lib
+
+<span class="c"># Set License environment variable for Reprise License Manager (RLM)</span>
+<span class="nv">setenv</span><span class="w"> </span>RLM_LICENSE<span class="w"> </span><span class="mi">2765</span>@your-license-server-hostname
+</pre></div>
+</div>
+</section>
+<section id="test-and-user-as-any-user-on-the-server">
+<h2>Test and User as Any User on the Server<a class="headerlink" href="#test-and-user-as-any-user-on-the-server" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>List available modules:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>avail
+</pre></div>
+</div>
+<p><em>Output should display</em> <code class="docutils literal notranslate"><span class="pre">converge/3.1</span></code>.</p>
+</li>
+<li><p>Load CONVERGE into the current shell:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>converge/3.1
+</pre></div>
+</div>
+</li>
+<li><p>Verify the environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>converge
+module<span class="w"> </span>list
+</pre></div>
+</div>
+</li>
+<li><p>Unload when finished:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>unload<span class="w"> </span>converge
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sphinx.html" class="btn btn-neutral float-left" title="Sphinx" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Exercises/index.html" class="btn btn-neutral float-right" title="Exercises (Tools &amp; Utilities)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Sayop Kim.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
