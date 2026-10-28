@@ -59,6 +59,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#what-is-sphinx">What is Sphinx?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#core-mechanics-features">Core Mechanics &amp; Features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-sphinx-works">How Sphinx Works?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-install-sphinx-for-ccl-docs">How To Install Sphinx for CCL-Docs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#launch-sphinx-for-live-drafting">Launch Sphinx for Live Drafting</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="module.html">Environment Module Manager</a></li>
@@ -143,6 +145,58 @@ Welcome to the Project Documentation!
 </pre></div>
 </div>
 </div>
+</section>
+<section id="how-to-install-sphinx-for-ccl-docs">
+<h2>How To Install Sphinx for CCL-Docs<a class="headerlink" href="#how-to-install-sphinx-for-ccl-docs" title="Link to this heading"></a></h2>
+<section id="set-up-system-tools-and-python-virtual-environment">
+<h3>Set Up system tools and Python Virtual Environment<a class="headerlink" href="#set-up-system-tools-and-python-virtual-environment" title="Link to this heading"></a></h3>
+<p>Ensure Python, <code class="docutils literal notranslate"><span class="pre">pip</span></code>, <code class="docutils literal notranslate"><span class="pre">venv</span></code>, and <code class="docutils literal notranslate"><span class="pre">make</span></code> are installed on your system, then create an isolated environment for Sphinx. This example applies to the ccl-docs page structure.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update package list and install dependencies</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git<span class="w"> </span>python3<span class="w"> </span>python3-pip<span class="w"> </span>python3-venv<span class="w"> </span>make
+
+<span class="c1"># Go to ccl-docs directory</span>
+<span class="nb">cd</span><span class="w"> </span>/path/to/your/ccl-docs/docs
+
+<span class="c1"># Create and activate a virtual environment</span>
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</pre></div>
+</div>
+</section>
+<section id="install-sphinx-and-dependencies">
+<h3>Install Sphinx and Dependencies<a class="headerlink" href="#install-sphinx-and-dependencies" title="Link to this heading"></a></h3>
+<p>If your repository has a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file listing its dependencies in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>If you do not have a requirements.txt file yet, install standard Sphinx components along with live-reload support:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>sphinx<span class="w"> </span>sphinx-autobuild<span class="w"> </span>sphinx_rtd_theme<span class="w"> </span>myst-parser
+</pre></div>
+</div>
+</section>
+</section>
+<section id="launch-sphinx-for-live-drafting">
+<h2>Launch Sphinx for Live Drafting<a class="headerlink" href="#launch-sphinx-for-live-drafting" title="Link to this heading"></a></h2>
+<section id="option-a-live-reloading-server-recommended">
+<h3>Option A: Live Reloading Server (Recommended)<a class="headerlink" href="#option-a-live-reloading-server-recommended" title="Link to this heading"></a></h3>
+<p>Using <code class="docutils literal notranslate"><span class="pre">sphinx-autobuild</span></code> monitors your documentation directory and updates the browser live whenever you edit <code class="docutils literal notranslate"><span class="pre">.rst</span></code> or <code class="docutils literal notranslate"><span class="pre">.md</span></code> files.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Go to the directory where you have conf.py file:</span>
+<span class="nb">cd</span><span class="w"> </span>/path/to/ccl-docs/docs
+
+sphinx-autobuild<span class="w"> </span>.<span class="w"> </span>_build/html
+</pre></div>
+</div>
+<p>Open your web browser and go to [<a class="reference external" href="http://127.0.0.1:8000](http://127.0.0.1:8000" rel="noreferrer" target="_blank">http://127.0.0.1:8000](http://127.0.0.1:8000</a>) to view live updates while editing.</p>
+</section>
+<section id="option-b-manual-html-build">
+<h3>Option B: Manual HTML Build<a class="headerlink" href="#option-b-manual-html-build" title="Link to this heading"></a></h3>
+<p>To trigger a static build manually:</p>
+<p>Open the rendered HTML in a browser or go to [<a class="reference external" href="http://127.0.0.1:8000](http://127.0.0.1:8000" rel="noreferrer" target="_blank">http://127.0.0.1:8000](http://127.0.0.1:8000</a>) to view the update in the page:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>firefox<span class="w"> </span>_build/html/index.html
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 

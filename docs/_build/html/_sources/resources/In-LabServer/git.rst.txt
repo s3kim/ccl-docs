@@ -37,6 +37,23 @@ Start a new repository locally or download an existing one from a remote host (e
    git clone https://github.com/username/repository.name.git
 
 
+If you are setting up the ccl-docs on your Linux (e.g., Ubuntu) machine for the first time, clone it:
+
+.. code-block:: bash
+
+   git clone https://github.com/s3kim/ccl-docs.git
+   cd ccl-docs
+
+If you have already cloned the repository and want to fetch the latest changes from the hub:
+
+.. code-block:: bash
+
+   cd ccl-docs
+   git pull origin main
+(Replace main with master if your repository uses master as its primary branch name.)
+
+
+
 ----------------------------------
 3. The Basic Git Workflow
 ----------------------------------
@@ -111,6 +128,7 @@ Share your commits with remote repositories or retrieve updates from team member
 
    # Push your local commits to the remote repository
    git push origin feature-name
+
 
 ----------------------------------
 Quick Reference Summary

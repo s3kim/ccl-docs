@@ -52,3 +52,78 @@ A Sphinx project follows a standard file structure:
       api_reference
 
 
+How To Install Sphinx for CCL-Docs
+-----------------------------------
+
+Set Up system tools and Python Virtual Environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Ensure Python, ``pip``, ``venv``, and ``make`` are installed on your system, then create an isolated environment for Sphinx. This example applies to the ccl-docs page structure.
+
+.. code-block:: bash
+
+   # Update package list and install dependencies
+   sudo apt update
+   sudo apt install -y git python3 python3-pip python3-venv make
+
+   # Go to ccl-docs directory
+   cd /path/to/your/ccl-docs/docs
+
+   # Create and activate a virtual environment
+   python3 -m venv .venv
+   source .venv/bin/activate
+
+
+
+Install Sphinx and Dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If your repository has a ``requirements.txt`` file listing its dependencies in the ``docs`` directory, run:
+
+.. code-block:: bash
+
+   pip install -r requirements.txt
+
+If you do not have a requirements.txt file yet, install standard Sphinx components along with live-reload support:
+
+.. code-block:: bash
+
+   pip install sphinx sphinx-autobuild sphinx_rtd_theme myst-parser
+
+
+Launch Sphinx for Live Drafting
+--------------------------------
+
+Option A: Live Reloading Server (Recommended)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Using ``sphinx-autobuild`` monitors your documentation directory and updates the browser live whenever you edit ``.rst`` or ``.md`` files.
+
+.. code-block:: bash
+
+   # Go to the directory where you have conf.py file:
+   cd /path/to/ccl-docs/docs
+
+   sphinx-autobuild . _build/html
+
+Open your web browser and go to [http://127.0.0.1:8000](http://127.0.0.1:8000) to view live updates while editing.
+
+
+Option B: Manual HTML Build
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To trigger a static build manually:
+
+.. code-block:: bash
+   # Run from the directory containing the Makefile (root or docs/ folder)
+   make html
+
+Open the rendered HTML in a browser or go to [http://127.0.0.1:8000](http://127.0.0.1:8000) to view the update in the page:
+
+.. code-block:: bash
+
+   firefox _build/html/index.html
+
+
+
+
