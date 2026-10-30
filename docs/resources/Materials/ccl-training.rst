@@ -55,5 +55,15 @@
 (2026/10/02) :download:`download <files/2026_10_02_CCL_training-aachemBomb-HPC.pdf>`. Watch the training video: |youtube_button_5|
 
 
+.. |youtube_button_6| raw:: html
+
+   <a href="https://www.youtube.com/watch?v=ldeHGDRgB80" target="_blank" style="text-decoration: none; vertical-align: middle;">
+       <button style="background-color: #FF0000; color: white; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 13px; display: inline-flex; align-items: center; gap: 4px;">
+           ▶ Watch on YouTube
+       </button>
+   </a>
+
+(2026/10/30) CONVERGE_Studio Setup for RDE simulation |youtube_button_6|
+
 
 
